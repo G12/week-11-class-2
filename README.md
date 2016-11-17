@@ -2,19 +2,19 @@
 
 SASS
 
--variables in SASS
+- variables in SASS
 
--nesting styles in SASS
+- nesting styles in SASS
 
--includes in SASS (partials and @import)
+- includes in SASS (partials and @import)
 
--mixins in SASS (@mixin and @include)
+- mixins in SASS (@mixin and @include)
 
--operators (Math)
+- operators (Math)
 
--& parent selector
+- & parent selector
 
--@extend
+- @extend
 
 Lab - Working on SASS assignment
 
