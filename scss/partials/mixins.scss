@@ -1,22 +1,37 @@
-// Functions;
+// This function will handle media query for tablet view-port:
 @mixin tablet {
     @media screen and (min-width: 35rem) {
         
-        // replace @content with whatever you come up for your tablet view inside function call!
+        // @content will be replaced with whatever you come up for your tablet view inside function call!
         @content;
     }
 }
 
+// This function will calculate width of an individual column in grid system:
 @mixin calc-column-width($n, $w, $s) {
     
-    // $w - total width of the row
-    // $n - number of columns
-    // $s - value of spacing
+    // $w -> total width of the row
+    // $n -> number of columns
+    // $s -> value of spacing
+    
+    // ($n - 1) 
+        // number of spacings is always for 1 less than number of columns
+    
+    // $s($n - 1) 
+        // the total size of all spacings in a row
+    
+    // $w - $s($n - 1) 
+        // the total width of all columns in a row (without spacings)
+    
+    // ($w - $s*($n - 1))/$n 
+        // the width of a individual column in a row
     
     width: ($w - $s*($n - 1))/$n;
     
+    // Set the spacings (gutters) for each column as margin-left.
     margin: 0 0 0 $s;
     
+    // This rule removes margin-left that belongs to the first column in a row.
     &:first-child {
         margin: 0;
     }
