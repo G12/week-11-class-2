@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Droid+Sans');
 
+// Variables have to be imported first, because the rest of the code is using them.
 @import "partials/variables";
 
+// Mixins have to imported second, because they might use the variables and the rest of the code is using mixins.
 @import "partials/mixins";
 
+// Mobile first - Default Style
 body {
     font-size: 1.618rem;
     line-height: 1.618;
     font-family: $main-font-stack;
 }
 
+// Use this on any element that needs to clear floating. 
 .clearfix::after {
     content: "";
     display: block;
@@ -26,7 +30,6 @@ body {
     background: -ms-linear-gradient(top, #CCC 0%, #999 100%); /* IE10+ */
     background: linear-gradient(to bottom, #CCC 0%, #999 100%); /* W3C */
 }
-
 
 // Nesting - resembles the HTML structure:
 ul {
@@ -57,7 +60,6 @@ ul {
     background-color: #999;
 }
 
-
 p {
     background-color: #CCC;
     padding: 1rem;
@@ -65,6 +67,5 @@ p {
     // Inheritance
     @extend .gradient;
 }
-
 
 @import "partials/queries";
