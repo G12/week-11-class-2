@@ -1,5 +1,8 @@
+// Function call starts with @include.
 // Calling your function "tablet":
 @include tablet {
+    
+    // The set of rules below replaced @content (see mixins.scss):
     ul {
     
         li {
