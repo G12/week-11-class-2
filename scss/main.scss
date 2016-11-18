@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Droid+Sans');
+
+@import "partials/variables";
+
+@import "partials/mixins";
+
+body {
+    font-size: 1.618rem;
+    line-height: 1.618;
+    font-family: $main-font-stack;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.gradient {
+    background: #CCC; /* Very old browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#CCC', endColorstr='#999', GradientType=0); /* IE6-9 */
+    background: -moz-linear-gradient(top, #CCC 0%, #999 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #CCC), color-stop(100%, #999)); /* Chrome, Safari4+ */
+    background: -webkit-linear-gradient(top, #CCC 0%, #999 100%); /* Chrome10+, Safari5.1+ */
+    background: -o-linear-gradient(top, #CCC 0%, #999 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #CCC 0%, #999 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #CCC 0%, #999 100%); /* W3C */
+}
+
+
+// Nesting - resembles the HTML structure:
+ul {
+    list-style: none;
+    
+    li {
+        
+        a {
+            text-decoration: none;
+            color: $link-color;
+            
+            
+            &:hover {
+                color: $link-color-hover;
+            }
+        }
+    }
+}
+
+.row {
+    background-color: #444;
+    padding: 1rem 0;
+}
+
+.col {
+    width: 100%;
+    float: left;
+    background-color: #999;
+}
+
+
+p {
+    background-color: #CCC;
+    padding: 1rem;
+    
+    // Inheritance
+    @extend .gradient;
+}
+
+
+@import "partials/queries";

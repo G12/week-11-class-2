@@ -1,0 +1,23 @@
+// Functions;
+@mixin tablet {
+    @media screen and (min-width: 35rem) {
+        
+        // replace @content with whatever you come up for your tablet view inside function call!
+        @content;
+    }
+}
+
+@mixin calc-column-width($n, $w, $s) {
+    
+    // $w - total width of the row
+    // $n - number of columns
+    // $s - value of spacing
+    
+    width: ($w - $s*($n - 1))/$n;
+    
+    margin: 0 0 0 $s;
+    
+    &:first-child {
+        margin: 0;
+    }
+}
